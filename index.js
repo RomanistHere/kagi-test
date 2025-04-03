@@ -39,6 +39,13 @@ court2("Andes", 4, "Mark Betty Frank Mike");
 court2("Wrangler", 1, "Mark Hank Frank Vivian");
 console.timeEnd('mark2')
 
-// I played with different techniques but the thing is, by now browser's engine is so optimized that doing any additional movements on small datasets like this one (array of 5) is likely to increase time instead of saving it. And that's what I mainly saw. The only major speed increase between v1 and v2 is removing concatenation and pushing `yourName` instead which in this exact case doesn't have any downsides
+// I played with different techniques but the thing is, by now browser's engine is so optimized that doing any additional movements
+// on small datasets like this one (array of 5) is likely to increase time instead of saving it. And that's what I mainly saw.
+// The only major speed increase between v1 and v2 is removing concatenation and pushing `yourName` instead which in this exact case
+// doesn't have any downsides
 
-// depending on the real task, it might be useful to get the first letter of `yourName` and in case it's "A" do a quick check if there are other "A"s in `otherNamesArray` - and if not, proceed to the answer thus skipping sorting (which is the most "heavy" operation here), but I'm not sure if it's worth it generally. Definitely not in our example and data samples, I tried. I would assume that you guys for search have a multi-layer search/sort based on every next character or something like that with popular exceptions that skip it.
+// depending on the real task, it might be useful to get the first letter of `yourName` and in case it's "A" do a quick check
+// if there are other "A"s in `otherNamesArray` - and if not, proceed to the answer thus skipping sorting
+// (which is the most "heavy" operation here), but I'm not sure if it's worth it generally. Definitely not in our example and data samples,
+// I tried. I would assume that you guys for search have a multi-layer search/sort based on every next character or something like that
+// with popular exceptions that skip it.
