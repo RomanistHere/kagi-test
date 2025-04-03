@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>No JS</title>
+</head>
+<body>
+	<fieldset>
+		<h1>Meat Lasagna Recipe</h1>
+
+		<!--	imaginary widget component's slot starts 	-->
+
+		<div class="label">
+			<input type="checkbox" id="1" name="1" />
+			<label for="1">1 pound sweet Italian sausage</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="2" name="2" />
+			<label for="2">3/4 pound lean ground beef</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="3" name="3" />
+			<label for="3">1/2 cup minced onion</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="4" name="4" />
+			<label for="4">2 gloves garlic</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="5" name="5" />
+			<label for="5">1 can crushed tomatoes</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="6" name="6" />
+			<label for="6">2 cans tomato paste</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="7" name="7" />
+			<label for="7">2 cans canned tomato sauce</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="8" name="8" />
+			<label for="8">1/2 cup water</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="9" name="9" />
+			<label for="9">2 tablespoons white sugar</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="10" name="10" />
+			<label for="10">1 1/2 tablespoons dried basil leaves</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="11" name="11" />
+			<label for="11">1/2 teaspoons fennel seeds</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="12" name="12" />
+			<label for="12">1 tablespoon Italian seasoning</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="13" name="13" />
+			<label for="13">1 egg</label>
+		</div>
+
+		<div class="label">
+			<input type="checkbox" id="14" name="14" />
+			<label for="14">12 lasagna noodles</label>
+		</div>
+
+		<!--	slot ends 	-->
+
+		<label class="hidden">
+			<input type="checkbox" id="more" name="13" />
+			<span>Show</span>
+		</label>
+	</fieldset>
+</body>
+</html>
+
+<style>
+	body {
+		padding: 4rem;
+		font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	}
+
+	.label {
+		padding: 0.25rem 0;
+	}
+
+	.hidden input {
+		opacity: 0;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
+	.hidden span::after {
+		content: " more"
+	}
+
+	.hidden input:checked + span::after {
+		content: " less"
+	}
+
+	fieldset {
+		max-width: 22rem;
+		border-radius: 0.75rem;
+		padding: 1rem 1rem 2rem;
+	}
+
+	h1 {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		font-weight: 500;
+		margin-top: 0;
+	}
+
+	.hidden {
+		display: none;
+		margin-top: 2rem;
+		margin-bottom: -1rem;
+		padding: 0.5rem;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	fieldset:has(> div:nth-last-child(13)) .hidden {
+		display: block;
+	}
+
+	div:nth-child(n + 13) {
+		display: none;
+	}
+
+	fieldset:has(> .hidden input:checked) div {
+		display: block;
+	}
+</style>
