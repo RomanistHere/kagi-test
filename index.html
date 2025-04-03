@@ -90,6 +90,17 @@
 			<span>Show</span>
 		</label>
 	</fieldset>
+
+	<article>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+		</p>
+
+		<label class="hidden">
+			<input type="checkbox" name="show" />
+			<span>Show</span>
+		</label>
+	</article>
 </body>
 </html>
 
@@ -97,6 +108,7 @@
 	body {
 		padding: 4rem;
 		font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		display: flex;
 	}
 
 	.label {
@@ -118,8 +130,9 @@
 		content: " less"
 	}
 
-	fieldset {
+	fieldset, article {
 		max-width: 22rem;
+		width: 100%;
 		border-radius: 0.75rem;
 		padding: 1rem 1rem 2rem;
 	}
@@ -150,5 +163,23 @@
 
 	fieldset:has(> .hidden input:checked) div {
 		display: block;
+	}
+
+	article .hidden {
+		display: block;
+	}
+
+	article p {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 10;
+	}
+
+	article:has(> .hidden input:checked) p {
+		overflow: visible;
+		display: block;
+		-webkit-box-orient: horizontal;
+		-webkit-line-clamp: none;
 	}
 </style>
